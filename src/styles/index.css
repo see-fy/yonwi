@@ -18,3 +18,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  
+}
+
+
+.container {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+
+.swiper-pagination-fraction {
+  bottom: 0;
+}
+
+.swiper-pagination-bullet {
+  width: 25px;
+  height: 5px;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=styles.css.map */

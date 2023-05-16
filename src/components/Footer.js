@@ -58,26 +58,26 @@ function Footer() {
           </div>
         </div>
 
-        <div class="space-y-4">
+        <div class="space-y-4 flex flex-col">
           <h1 class="text-white font-bold text-2xl">Entreprise</h1>
-          <p class="text-white text-sm cursor-pointer">A propos</p>
-          <p class="text-white text-sm cursor-pointer">Offres d'emploi</p>
-          <p class="text-white text-sm cursor-pointer">Contact</p>
-          <p class="text-white text-sm cursor-pointer">Espace Presse</p>
-          <p class="text-white text-sm cursor-pointer">Publicités</p>
+          <a class="text-white text-sm cursor-pointer" href="/about">A propos</a>
+          <a class="text-white text-sm cursor-pointer" href="/jobs">Offres d'emploi</a>
+          <a class="text-white text-sm cursor-pointer" href="/contact">Contact</a>
+          <a class="text-white text-sm cursor-pointer" href="/presse">Espace Presse</a>
+          <a class="text-white text-sm cursor-pointer" href="/ads">Publicités</a>
         </div>
 
-        <div class="space-y-4">
+        <div class="space-y-4 flex flex-col">
           <h1 class="text-white text-2xl font-bold">Utilisateurs </h1>
-          <p class="text-white text-sm cursor-pointer">Aide</p>
-          <p class="text-white text-sm cursor-pointer">Mentions légales</p>
-          <p class="text-white text-sm cursor-pointer">
+          <a class="text-white text-sm cursor-pointer" href="/help">Aide</a>
+          <a class="text-white text-sm cursor-pointer" href="/legal">Mentions légales</a>
+          <a class="text-white text-sm cursor-pointer" href="/confidentiality">
             Politique de confidentialité
-          </p>
-          <p class="text-white text-sm cursor-pointer">
+          </a>
+          <a class="text-white text-sm cursor-pointer" href="/usage">
             Conditions d'utilisations
-          </p>
-          <p class="text-white text-sm cursor-pointer">Cookies</p>
+          </a>
+          <a class="text-white text-sm cursor-pointer" href="/usage">Cookies</a>
         </div>
 
         <div class="space-y-4">
@@ -115,7 +115,7 @@ function Footer() {
         </div>
 
         <p class="text-white cursor-pointer text-xs">
-          Cité keur Gorgui, Dakar, Sénégal
+          69 Rue des exemples, Dakar, Sénégal
         </p>
         <p class="text-white cursor-pointer text-xs">
           @ 2023 Yonwi Corporation Inc.

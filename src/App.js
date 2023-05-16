@@ -11,8 +11,17 @@ import { auth } from "./firebase";
 import { useSelector } from "react-redux";
 import { loginUser, logoutUser, selectUser } from "./slices/userSlice";
 import Profile from "./pages/profile";
+import Help from "./pages/help";
+import Ads from "./pages/ads";
+import Legal from "./pages/legalMen";
+import Usage from "./pages/usage";
+import Presse from "./pages/presse";
+import Confidentiality from "./pages/confidentiality";
+import Contact from "./pages/contact";
+import Cookies from "./pages/cookies";
+import Jobs from "./pages/jobs";
 import Modal from "./pages/modal";
-
+import About from "./pages/about";
 
 function App() {
   const user = useSelector(selectUser);
@@ -25,17 +34,17 @@ function App() {
           loginUser({
             uid: user.uid,
             email: user.email,
-            name: user.displayName
+            name: user.displayName,
           })
         );
-        console.log(user)
+        console.log(user);
       } else {
         dispatch(logoutUser());
       }
     });
     return unsub;
   }, [dispatch]);
-  
+
   return (
     <div>
       <Routes>
@@ -47,12 +56,35 @@ function App() {
             <Route path="/assurance" element={<Assurance />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/modal" element={<Modal />} />
+<Route path="/presse" element={<Presse />} />
+<Route path="/confidentiality" element={<Confidentiality />} />
+<Route path="/ads" element={<Ads />} />
+<Route path="/jobs" element={<Jobs />} />
+<Route path="/help" element={<Help />} />
+<Route path="/legal" element={<Legal />} />
+<Route path="/usage" element={<Usage />} />
+<Route path="/cookies" element={<Cookies />} />
+<Route path="/contact" element={<Contact />} />
+<Route path="/about" element={<About/>} />
           </>
         )}
         {!user && (
           <>
             <Route exact path="/" element={<Landing />} />
             <Route path="login" element={<Login />} />
+<Route path="/presse" element={<Presse />} />
+<Route path="/confidentiality" element={<Confidentiality />} />
+            <Route path="/code" element={<Code />} />
+            <Route path="/conduite" element={<Conduite />} />
+            <Route path="/assurance" element={<Assurance />} />
+<Route path="/ads" element={<Ads />} />
+<Route path="/jobs" element={<Jobs />} />
+<Route path="/help" element={<Help />} />
+<Route path="/legal" element={<Legal />} />
+<Route path="/usage" element={<Usage />} />
+<Route path="/cookies" element={<Cookies />} />
+<Route path="/contact" element={<Contact />} />
+<Route path="/about" element={<About />} />
           </>
         )}
         <Route path="*" element={<Navigate to={"/"} />} />

@@ -28,7 +28,7 @@ const ModalPop = () => {
     () =>
       onSnapshot(doc(db, "users", user.uid), (snapshot) => {
         if (snapshot.exists()) {
-          navigate("/");
+          navigate("/code");
         }
       }),
     [navigate, user.uid]
@@ -48,7 +48,7 @@ const ModalPop = () => {
       location: locationRef.current.value,
       phone: phoneRef.current.value,
       exp: expRef.current.value,
-      type: typeRef.current.value,
+      type: typeRef.current.value.toLowerCase(),
       insta: instaRef.current.value,
       timestamp: serverTimestamp(),
     })
@@ -67,7 +67,11 @@ const ModalPop = () => {
   };
 
   return (
-    <Modal isOpen={isOpen} onRequestClose={closeModal} className="items-center justify-center flex flex-col py-10">
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={closeModal}
+      className="items-center justify-center flex flex-col py-10"
+    >
       <div className="max-w-lg bg-slate-900 flex flex-col items-center justify-center p-4 rounded">
         <h2 className="text-lg font-bold mb-4 text-white">
           Créer ou mettre à jour votre carte
@@ -93,7 +97,7 @@ const ModalPop = () => {
               className="block text-white text-sm font-bold mb-2"
               htmlFor="insta"
             >
-              Nom d'utilisateur Instagram
+              Nom d'utilisateur Insta
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-1 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
@@ -150,7 +154,6 @@ const ModalPop = () => {
               name="location"
               ref={locationRef}
               required
-
             />
           </div>
           <div className="mb-2">
@@ -167,7 +170,6 @@ const ModalPop = () => {
               name="twitter"
               ref={twitterRef}
               required
-
             />
           </div>
           <div className="mb-2">
@@ -184,17 +186,16 @@ const ModalPop = () => {
               name="exp"
               ref={expRef}
               required
-
             />
           </div>
           <div class="">
-          <label
+            <label
               className="block text-white text-sm font-bold mb-2"
               htmlFor="location"
             >
               Vous êtes?
             </label>
-           
+
             <select
               name="type"
               id="type"

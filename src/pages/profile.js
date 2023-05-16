@@ -73,36 +73,43 @@ function Profile() {
   };
 
   return (
-    <div className="h-screen flex items-center justify-around bg-black">
-      <div className="w-1/2">
-        <h1 className="text-white text-6xl mb-4 ml-2">Editer votre Profile</h1>
+    <div className="  flex flex-col  items-center justify-around bg-black">
+      <div className=" pt-5">
+        <h1 className="text-white text-2xl md:text-5xl mb-4 ml-2">
+          Editer votre Profile
+        </h1>
         <div className="h-1 w-full bg-gray-900 -mb-5" />
-        <div className="flex items-center mx-2 space-x-4">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-            className="h-24 w-24  -mt-72 rounded-3xl cursor-pointer"
-            alt=""
-          />
-          <div className="mt-4">
-            <div>
-              <h1 className="text-white  bg-gray-800 p-3 mb-2 mt-6 w-full">
+        <div className="flex flex-col justify-center items-center mx-2 space-x-4">
+          <div className="flex items-center justify-center space-x-4 py-1 mt-2 w-96">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+              className="h-20 w-20  rounded-3xl cursor-pointer"
+              alt=""
+            />
+            <div className="space-y-4 w-96">
+              <h1 className="text-white  bg-gray-800 p-3 mb-2 mt-6 w-full max-w-xl">
                 {user.email}
               </h1>
               <p className="text-white font-bold text-lg mb-1 mt-4 ">
                 {user.name}
               </p>
-              <div className="h-1 w-full bg-gray-900 -mb-2 " />
             </div>
-            <div className="w-full">
+          </div>
+
+          <div className="mt-4">
+            
+              <div className="h-1 w-96 bg-gray-900 -mb-2 " />
+           
+            <div className="w-96">
               <h1 className="text-white -mb-4 mt-6">
                 Dernière modification: 04/04/2024
                 {/* {profile.timestamp.toDate()} */}
               </h1>
 
-              <div className="flex items-center mx-4 justify-between my-8 w-full space-x-14">
+              <div className="flex items-center justify-between my-8 w-full space-x-14">
                 <div>
-                  <h1 className="font-bold text-white text-xl">
-                    Modification de votre carte
+                  <h1 className="font-bold text-white text-sm">
+                    Modification de la carte
                   </h1>
                   <p className="text-white text-xs mt-1">
                     Enseignant seulement
@@ -110,14 +117,14 @@ function Profile() {
                 </div>
                 <button
                   onClick={() => setShowCard(!showCard)}
-                  className={`p-2 w-40  text-white rounded font-semibold ${"bg-green-600 cursor-pointer"}`}
+                  className={`p-2 w-40  text-white rounded font-semibold  ${"bg-green-600 cursor-pointer"}`}
                 >
                   {!showCard ? "Modifier Carte" : "Annuler"}
                 </button>
               </div>
-              <div className="flex items-center mx-4 justify-between my-8 w-full space-x-14">
+              <div className="flex items-center  justify-between my-8 w-full space-x-14">
                 <div>
-                  <h1 className="font-bold text-white text-xl">
+                  <h1 className="font-bold text-white text-sm">
                     Suppression de la carte
                   </h1>
                   <p className="text-white text-xs mt-1">Arrêt de service</p>
@@ -128,9 +135,9 @@ function Profile() {
                   Supprimer Carte
                 </button>
               </div>
-              <div className="flex items-center mx-4 justify-between my-8 w-full space-x-14">
+              <div className="flex items-center justify-between my-8 w-full space-x-14">
                 <div>
-                  <h1 className="font-bold text-white text-xl">
+                  <h1 className="font-bold text-white text-sm">
                     Retour à l'accueil
                   </h1>
                   <p className="text-white text-xs mt-1">Page principale</p>
@@ -154,12 +161,9 @@ function Profile() {
           </div>
         </div>
       </div>
-      <div className="w-1/2 flex items-center justify-center">
+      <div className="px-2 flex  items-center justify-center pt-10">
         {showCard && (
           <div className="max-w-lg bg-slate-900 flex flex-col items-center justify-center p-4">
-            <h2 className="text-lg font-bold mb-4 text-white">
-              Créer ou mettre à jour votre carte
-            </h2>
             <div className=" rounded-lg shadow-lg p-4 settings-section grid grid-cols-2 gap-4">
               <div className="mb-2">
                 <label
@@ -182,7 +186,7 @@ function Profile() {
                   className="block text-white text-sm font-bold mb-2"
                   htmlFor="insta"
                 >
-                  Nom d'utilisateur Instagram
+                  Nom d'utilisateur Insta
                 </label>
                 <input
                   className="shadow appearance-none border rounded w-full py-1 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
@@ -260,21 +264,21 @@ function Profile() {
                 />
               </div>
               <div className="mb-2">
-            <label
-              className="block text-white text-sm font-bold mb-2"
-              htmlFor="exp"
-            >
-              Experience en année
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-1 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
-              id="exp"
-              type="text"
-              name="exp"
-              defaultValue={profile.exp}
-              ref={expRef}
-            />
-          </div>
+                <label
+                  className="block text-white text-sm font-bold mb-2"
+                  htmlFor="exp"
+                >
+                  Experience en année
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-1 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                  id="exp"
+                  type="text"
+                  name="exp"
+                  defaultValue={profile.exp}
+                  ref={expRef}
+                />
+              </div>
               <div class="">
                 <label
                   className="block text-white text-sm font-bold mb-2"
@@ -327,6 +331,7 @@ function Profile() {
           </div>
         )}
       </div>
+<div className="h-[28rem]"></div>
     </div>
   );
 }
